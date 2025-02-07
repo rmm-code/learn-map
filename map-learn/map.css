@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Map Container */
+.map-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1500px;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Map Wrapper */
+#map-wrapper {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+}
+
+/* Object for embedding the SVG map */
+object {
+    width: 100%;
+    height: 100%;
+    display: block; /* Ensures no extra space around the map */
+}
+
+/* Country Path Styles */
+path {
+    fill: #a1b2a1; /* Slightly lighter green for better visibility */
+    stroke: #222; /* Darker stroke for contrast */
+    stroke-width: 0.5px;
+    transition: fill 0.3s ease, stroke 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+path:hover {
+    stroke: #333;
+    fill: #ff6347;
+}
+
+/* Country Info Box */
+.info-container {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    max-width: 900px;
+    text-align: left;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
+}
+
+.buttons-container button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+    user-select: none; /* Prevent text selection */
+}
+
+#learn-button {
+    background-color: #2196F3;
+    color: white;
+}
+
+#games-button {
+    background-color: #FF5722;
+    color: white;
+}
+
+.buttons-container button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Games Section */
+#games-section {
+    display: none;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Quiz Header (Title and Play Button in One Row) */
+.quiz-header {
+    display: flex;
+    justify-content: space-around; /* Brings play button closer */
+    align-items: center;
+}
+
+#play-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#play-button:hover {
+    background-color: #45a049;
+}
+
+#target-country, #score {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .map-container {
+        height: 70vh;
+    }
+    
+    .info-container {
+        width: 80%;
+    }
+    
+    .title {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .map-container {
+        height: 60vh;
+    }
+
+    .info-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    #games-section {
+        width: 90%;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons-container button {
+        width: 100%; /* Ensures full width on small screens */
+    }
+}
